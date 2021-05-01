@@ -12,7 +12,6 @@ The library provides with the following distributions:
  - Discrete
    - Bernoulli
    - Binomial
-   - Exponential
    - Geometric
    - Hypergeometric
    - Poisson
