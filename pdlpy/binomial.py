@@ -1,4 +1,5 @@
-from pdlpy import binomial
+from pdlpy.combinatorics import ncr
+
 
 class Binomial:
     """
@@ -26,7 +27,7 @@ class Binomial:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return binomial(self.n, x) * self.p ** x * (1 - self.p) ** (self.n - x)
+        return ncr(self.n, x) * self.p ** x * (1 - self.p) ** (self.n - x)
 
     def cdf(self, x):
         """

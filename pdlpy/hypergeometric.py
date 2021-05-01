@@ -1,4 +1,5 @@
-from pdlpy import binomial
+from pdlpy.combinatorics import ncr
+
 
 class Hypergeometric:
     """
@@ -28,11 +29,7 @@ class Hypergeometric:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (
-            binomial(self.M, x)
-            * binomial(self.N - self.M, self.n - x)
-            / binomial(self.N, self.n)
-        )
+        return ncr(self.M, x) * ncr(self.N - self.M, self.n - x) / ncr(self.N, self.n)
 
     def cdf(self, x):
         """
