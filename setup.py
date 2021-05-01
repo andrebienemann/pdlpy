@@ -1,13 +1,11 @@
 import setuptools
 
-long_description = str()
-
 with open("README.md", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
     name="pdlpy",
-    version="0.1.0.rc1",
+    version="0.1.0",
     author="André Bienemann",
     author_email="andre.bienemann@gmail.com",
     description="Probability Distribution Library for Python",
