@@ -9,13 +9,13 @@
 **Probability Distribution Library for Python** or **pdlpy** for short is a library for simulation and analysis of random processes.
 
 The library provides with the following distributions:
- - Discrete
-   - Bernoulli
-   - Binomial
-   - Geometric
-   - Hypergeometric
-   - Poisson
- - Cont
-   - Exponential
-   - Normal
-   - Uniform
+ - Discrete:
+   - [Bernoulli](https://en.wikipedia.org/wiki/Bernoulli_distribution)
+   - [Binomial](https://en.wikipedia.org/wiki/Binomial_distribution)
+   - [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution)
+   - [Hypergeometric](https://en.wikipedia.org/wiki/Hypergeometric_distribution)
+   - [Poisson](https://en.wikipedia.org/wiki/Poisson_distribution)
+ - Continuous:
+   - [Exponential](https://en.wikipedia.org/wiki/Exponential_distribution)
+   - [Normal](https://en.wikipedia.org/wiki/Normal_distribution)
+   - [Uniform](https://en.wikipedia.org/wiki/Continuous_uniform_distribution)
