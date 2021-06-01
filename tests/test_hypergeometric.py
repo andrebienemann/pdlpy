@@ -5,16 +5,17 @@ from pdlpy import Hypergeometric
 
 class TestHypergeometric(TestCase):
     def setUp(self):
-        self.hypergeometric = Hypergeometric(0, 2, 0)
+        self.hypergeometric = Hypergeometric(1, 2, 1)
 
     def test_mean(self):
-        self.assertEqual(0.0, self.hypergeometric.mean)
+        self.assertEqual(0.5, self.hypergeometric.mean)
 
     def test_var(self):
-        self.assertEqual(0.0, self.hypergeometric.var)
+        self.assertEqual(0.25, self.hypergeometric.var)
 
     def test_pmf(self):
-        self.assertEqual(1.0, self.hypergeometric.pmf(0))
+        self.assertEqual(0.5, self.hypergeometric.pmf(0))
 
     def test_cdf(self):
-        self.assertEqual(1.0, self.hypergeometric.cdf(0))
+        self.assertEqual(0.5, self.hypergeometric.cdf(0))
+        self.assertEqual(1.0, self.hypergeometric.cdf(1))
