@@ -38,6 +38,7 @@ coverage:
 .PHONY: publish
 publish:
 	@ \
+	rm -r build && rm -r dist; \
 	source $(DIR)/venv/bin/activate; \
 	python $(DIR)/setup.py sdist bdist_wheel; \
 	twine upload $(DIR)/dist/*; \
