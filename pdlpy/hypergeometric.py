@@ -13,11 +13,19 @@ class Hypergeometric:
         N: the size of the test set
         M: the number of successes
         """
-        self.n = n
-        self.N = N
-        self.M = M
-        self.mean = n * M / N
-        self.var = n * M / N * (1 - M / N) * (N - n) / (N - 1)
+        self.__n = n
+        self.__N = N
+        self.__M = M
+        self.__mean = n * M / N
+        self.__var = n * M / N * (1 - M / N) * (N - n) / (N - 1)
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pmf(self, x):
         """
@@ -29,7 +37,7 @@ class Hypergeometric:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return ncr(self.M, x) * ncr(self.N - self.M, self.n - x) / ncr(self.N, self.n)
+        return ncr(self.__M, x) * ncr(self.__N - self.__M, self.__n - x) / ncr(self.__N, self.__n)
 
     def cdf(self, x):
         """

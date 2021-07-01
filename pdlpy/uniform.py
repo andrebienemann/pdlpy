@@ -9,12 +9,20 @@ class Uniform:
         a: the minimum value of X
         b: the maximum value of X
         """
-        self.a = a
-        self.b = b
-        self.mean = (a + b) / 2
-        self.var = (b - a) ** 2 / 12
+        self.__a = a
+        self.__b = b
+        self.__mean = (a + b) / 2
+        self.__var = (b - a) ** 2 / 12
 
-    def pdf(self, x):
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
+
+    def pdf(self, x=None):
         """
         Probability Density Function
 
@@ -24,7 +32,7 @@ class Uniform:
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return 1 / (self.b - self.a)
+        return 1 / (self.__b - self.__a)
 
     def cdf(self, x):
         """
@@ -36,9 +44,9 @@ class Uniform:
         Returns
         the probability that X will take a value less than or equal to x
         """
-        if x <= self.a:
+        if x <= self.__a:
             return 0.0
-        elif x >= self.b:
+        elif x >= self.__b:
             return 1.0
         else:
-            return (x - self.a) / (self.b - self.a)
+            return (x - self.__a) / (self.__b - self.__a)

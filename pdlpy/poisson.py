@@ -11,9 +11,17 @@ class Poisson:
         Parameters
         rate: the average number of events
         """
-        self.rate = rate
-        self.mean = self.rate
-        self.var = self.rate
+        self.__rate = rate
+        self.__mean = rate
+        self.__var = rate
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pmf(self, x):
         """
@@ -25,7 +33,7 @@ class Poisson:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (self.rate ** x) * (math.e ** (-self.rate)) / math.factorial(x)
+        return (self.__rate ** x) * (math.e ** (-self.__rate)) / math.factorial(x)
 
     def cdf(self, x):
         """

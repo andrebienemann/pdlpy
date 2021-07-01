@@ -8,9 +8,17 @@ class Bernoulli:
         Parameters
         p: the probability of positive outcome of an experiment
         """
-        self.p = p
-        self.mean = p
-        self.var = p * (1 - p)
+        self.__p = p
+        self.__mean = p
+        self.__var = p * (1 - p)
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pmf(self, x):
         """
@@ -23,9 +31,9 @@ class Bernoulli:
         the probability that X will take a value exactly equal to x
         """
         if x == 0:
-            return 1.0 - self.p
+            return 1.0 - self.__p
         else:
-            return self.p
+            return self.__p
 
     def cdf(self, x):
         """
@@ -38,6 +46,6 @@ class Bernoulli:
         the probability that X will take a value less than or equal to x
         """
         if x == 0:
-            return 1.0 - self.p
+            return 1.0 - self.__p
         else:
             return 1.0

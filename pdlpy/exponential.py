@@ -11,9 +11,17 @@ class Exponential:
         Paramters
         rate: the average number of events
         """
-        self.rate = rate
-        self.mean = rate ** -1
-        self.var = rate ** -2
+        self.__rate = rate
+        self.__mean = rate ** -1
+        self.__var = rate ** -2
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pdf(self, x):
         """
@@ -25,7 +33,7 @@ class Exponential:
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return self.rate * math.e ** (-self.rate * x)
+        return self.__rate * math.e ** (-self.__rate * x)
 
     def cdf(self, x):
         """
@@ -37,4 +45,4 @@ class Exponential:
         Returns
         the probability that X will take a value less than or equal to x
         """
-        return 1 - math.e ** (-self.rate * x)
+        return 1 - math.e ** (-self.__rate * x)

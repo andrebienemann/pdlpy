@@ -12,10 +12,18 @@ class Binomial:
         n: the size of the sequence
         p: the probability of success
         """
-        self.n = n
-        self.p = p
-        self.mean = n * p
-        self.var = n * p * (1 - p)
+        self.__n = n
+        self.__p = p
+        self.__mean = n * p
+        self.__var = n * p * (1 - p)
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pmf(self, x):
         """
@@ -27,7 +35,7 @@ class Binomial:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return ncr(self.n, x) * self.p ** x * (1 - self.p) ** (self.n - x)
+        return ncr(self.__n, x) * self.__p ** x * (1 - self.__p) ** (self.__n - x)
 
     def cdf(self, x):
         """

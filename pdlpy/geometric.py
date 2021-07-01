@@ -8,9 +8,17 @@ class Geometric:
         Parameters
         p: the probability of the positive outcome of the experiment
         """
-        self.p = p
-        self.mean = 1 / p
-        self.var = (1 - p) / (p ** 2)
+        self.__p = p
+        self.__mean = 1 / p
+        self.__var = (1 - p) / (p ** 2)
+
+    @property
+    def mean(self):
+        return self.__mean
+
+    @property
+    def var(self):
+        return self.__var
 
     def pmf(self, x):
         """
@@ -22,7 +30,7 @@ class Geometric:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (1 - self.p) ** x * self.p
+        return (1 - self.__p) ** x * self.__p
 
     def cdf(self, x):
         """
