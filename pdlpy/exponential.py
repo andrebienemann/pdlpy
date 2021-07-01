@@ -1,7 +1,9 @@
 import math
 
+from pdlpy.distribution import Distribution
 
-class Exponential:
+
+class Exponential(Distribution):
     """
     Continuous probability distribution of time between events in a Poisson process
     """
@@ -11,23 +13,15 @@ class Exponential:
         Paramters
         rate: the average number of events
         """
-        self.__rate = rate
-        self.__mean = rate ** -1
-        self.__var = rate ** -2
+        self._rate = rate
+        self._mean = rate ** -1
+        self._var = rate ** -2
 
     def __str__(self):
-        rate = round(self.__rate, 2)
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        rate = round(self._rate, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Exponential(rate={rate}, mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pdf(self, x):
         """
@@ -39,7 +33,7 @@ class Exponential:
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return self.__rate * math.e ** (-self.__rate * x)
+        return self._rate * math.e ** (-self._rate * x)
 
     def cdf(self, x):
         """
@@ -51,4 +45,4 @@ class Exponential:
         Returns
         the probability that X will take a value less than or equal to x
         """
-        return 1 - math.e ** (-self.__rate * x)
+        return 1 - math.e ** (-self._rate * x)

@@ -1,4 +1,7 @@
-class Geometric:
+from pdlpy.distribution import Distribution
+
+
+class Geometric(Distribution):
     """
     Discrete probability distributions of the random number X of Bernoulli trials needed to get a single success
     """
@@ -8,23 +11,15 @@ class Geometric:
         Parameters
         p: the probability of the positive outcome of the experiment
         """
-        self.__p = p
-        self.__mean = 1 / p
-        self.__var = (1 - p) / (p ** 2)
+        self._p = p
+        self._mean = 1 / p
+        self._var = (1 - p) / (p ** 2)
 
     def __str__(self):
-        p = round(self.__p, 2)
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        p = round(self._p, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Geometric(p={p}, mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pmf(self, x):
         """
@@ -36,7 +31,7 @@ class Geometric:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (1 - self.__p) ** x * self.__p
+        return (1 - self._p) ** x * self._p
 
     def cdf(self, x):
         """

@@ -1,7 +1,9 @@
 import math
 
+from pdlpy.distribution import Distribution
 
-class Normal:
+
+class Normal(Distribution):
     """
     Continuous probability distribution of the random variable X that is assumed to be additively produced by many small effects
     """
@@ -12,21 +14,13 @@ class Normal:
         mean: the expectation of the distribution
         var: the variance of the distribution
         """
-        self.__mean = mean
-        self.__var = var
+        self._mean = mean
+        self._var = var
 
     def __str__(self):
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Normal(mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pdf(self, x):
         """
@@ -38,8 +32,8 @@ class Normal:
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return (1 / math.sqrt(2 * math.pi * self.__var)) * math.e ** (
-            -((x - self.__mean) ** 2 / 2 * self.__var)
+        return (1 / math.sqrt(2 * math.pi * self._var)) * math.e ** (
+            -((x - self._mean) ** 2 / 2 * self._var)
         )
 
     def cdf(self, x):
@@ -52,4 +46,4 @@ class Normal:
         Returns
         the probability that X will take a value less than or equal to x
         """
-        return (1 + math.erf((x - self.__mean) / (math.sqrt(self.__var * 2)))) / 2
+        return (1 + math.erf((x - self._mean) / (math.sqrt(self._var * 2)))) / 2

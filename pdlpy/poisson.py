@@ -1,7 +1,9 @@
 import math
 
+from pdlpy.distribution import Distribution
 
-class Poisson:
+
+class Poisson(Distribution):
     """
     Discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space
     """
@@ -11,23 +13,15 @@ class Poisson:
         Parameters
         rate: the average number of events
         """
-        self.__rate = rate
-        self.__mean = rate
-        self.__var = rate
+        self._rate = rate
+        self._mean = rate
+        self._var = rate
 
     def __str__(self):
-        rate = round(self.__rate, 2)
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        rate = round(self._rate, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Poisson(rate={rate}, mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pmf(self, x):
         """
@@ -39,7 +33,7 @@ class Poisson:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (self.__rate ** x) * (math.e ** (-self.__rate)) / math.factorial(x)
+        return (self._rate ** x) * (math.e ** (-self._rate)) / math.factorial(x)
 
     def cdf(self, x):
         """

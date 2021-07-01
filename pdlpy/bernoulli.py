@@ -1,4 +1,7 @@
-class Bernoulli:
+from pdlpy.distribution import Distribution
+
+
+class Bernoulli(Distribution):
     """
     Discrete probability distribution of a random variable X which takes either value 1 or 0
     """
@@ -8,23 +11,15 @@ class Bernoulli:
         Parameters
         p: the probability of positive outcome of an experiment
         """
-        self.__p = p
-        self.__mean = p
-        self.__var = p * (1 - p)
+        self._p = p
+        self._mean = p
+        self._var = p * (1 - p)
 
     def __str__(self):
-        p = round(self.__p, 2)
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        p = round(self._p, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Bernoulli(p={p}, mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pmf(self, x):
         """
@@ -37,9 +32,9 @@ class Bernoulli:
         the probability that X will take a value exactly equal to x
         """
         if x == 0:
-            return 1.0 - self.__p
+            return 1.0 - self._p
         else:
-            return self.__p
+            return self._p
 
     def cdf(self, x):
         """
@@ -52,6 +47,6 @@ class Bernoulli:
         the probability that X will take a value less than or equal to x
         """
         if x == 0:
-            return 1.0 - self.__p
+            return 1.0 - self._p
         else:
             return 1.0

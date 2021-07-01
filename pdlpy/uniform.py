@@ -1,4 +1,7 @@
-class Uniform:
+from pdlpy.distribution import Distribution
+
+
+class Uniform(Distribution):
     """
     Continuous distribution of a random variable X in interval [a; b] where any value of X has an equal probability
     """
@@ -9,25 +12,17 @@ class Uniform:
         a: the minimum value of X
         b: the maximum value of X
         """
-        self.__a = a
-        self.__b = b
-        self.__mean = (a + b) / 2
-        self.__var = (b - a) ** 2 / 12
+        self._a = a
+        self._b = b
+        self._mean = (a + b) / 2
+        self._var = (b - a) ** 2 / 12
 
     def __str__(self):
-        a = round(self.__a, 2)
-        b = round(self.__b, 2)
-        mean = round(self.__mean, 2)
-        var = round(self.__var, 2)
+        a = round(self._a, 2)
+        b = round(self._b, 2)
+        mean = round(self._mean, 2)
+        var = round(self._var, 2)
         return f"Uniform(a={a}, b={b}, mean={mean}, var={var})"
-
-    @property
-    def mean(self):
-        return self.__mean
-
-    @property
-    def var(self):
-        return self.__var
 
     def pdf(self, x=None):
         """
@@ -39,7 +34,7 @@ class Uniform:
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return 1 / (self.__b - self.__a)
+        return 1 / (self._b - self._a)
 
     def cdf(self, x):
         """
@@ -51,9 +46,9 @@ class Uniform:
         Returns
         the probability that X will take a value less than or equal to x
         """
-        if x <= self.__a:
+        if x <= self._a:
             return 0.0
-        elif x >= self.__b:
+        elif x >= self._b:
             return 1.0
         else:
-            return (x - self.__a) / (self.__b - self.__a)
+            return (x - self._a) / (self._b - self._a)
