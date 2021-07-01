@@ -12,6 +12,12 @@ class Bernoulli:
         self.__mean = p
         self.__var = p * (1 - p)
 
+    def __str__(self):
+        p = round(self.__p, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Bernoulli(p={p}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

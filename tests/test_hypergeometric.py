@@ -7,6 +7,9 @@ class TestHypergeometric(TestCase):
     def setUp(self):
         self.hypergeometric = Hypergeometric(1, 2, 1)
 
+    def test_str(self):
+        self.assertEqual("Hypergeometric(n=1, N=2, M=1, mean=0.5, var=0.25)", str(self.hypergeometric))
+
     def test_mean(self):
         self.assertEqual(0.5, self.hypergeometric.mean)
 

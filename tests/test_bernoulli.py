@@ -7,6 +7,9 @@ class TestBernoulli(TestCase):
     def setUp(self):
         self.bernoulli = Bernoulli(0.0)
 
+    def test_str(self):
+        self.assertEqual("Bernoulli(p=0.0, mean=0.0, var=0.0)", str(self.bernoulli))
+
     def test_mean(self):
         self.assertEqual(0.0, self.bernoulli.mean)
 

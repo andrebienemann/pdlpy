@@ -12,6 +12,12 @@ class Geometric:
         self.__mean = 1 / p
         self.__var = (1 - p) / (p ** 2)
 
+    def __str__(self):
+        p = round(self.__p, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Geometric(p={p}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

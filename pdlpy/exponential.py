@@ -15,6 +15,12 @@ class Exponential:
         self.__mean = rate ** -1
         self.__var = rate ** -2
 
+    def __str__(self):
+        rate = round(self.__rate, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Exponential(rate={rate}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

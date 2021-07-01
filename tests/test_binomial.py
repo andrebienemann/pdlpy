@@ -7,6 +7,9 @@ class TestBinomial(TestCase):
     def setUp(self):
         self.binomial = Binomial(1, 0.0)
 
+    def test_str(self):
+        self.assertEqual("Binomial(n=1, p=0.0, mean=0.0, var=0.0)", str(self.binomial))
+
     def test_mean(self):
         self.assertEqual(0.0, self.binomial.mean)
 

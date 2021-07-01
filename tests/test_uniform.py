@@ -7,6 +7,9 @@ class TestUniform(TestCase):
     def setUp(self):
         self.uniform = Uniform(0.0, 1.0)
 
+    def test_str(self):
+        self.assertEqual("Uniform(a=0.0, b=1.0, mean=0.5, var=0.08)", str(self.uniform))
+
     def test_mean(self):
         self.assertEqual(0.5, self.uniform.mean)
 

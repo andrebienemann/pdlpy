@@ -14,6 +14,13 @@ class Uniform:
         self.__mean = (a + b) / 2
         self.__var = (b - a) ** 2 / 12
 
+    def __str__(self):
+        a = round(self.__a, 2)
+        b = round(self.__b, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Uniform(a={a}, b={b}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

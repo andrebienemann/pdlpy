@@ -19,6 +19,14 @@ class Hypergeometric:
         self.__mean = n * M / N
         self.__var = n * M / N * (1 - M / N) * (N - n) / (N - 1)
 
+    def __str__(self):
+        n = round(self.__n, 2)
+        N = round(self.__N, 2)
+        M = round(self.__M, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Hypergeometric(n={n}, N={N}, M={M}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean
@@ -37,7 +45,11 @@ class Hypergeometric:
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return ncr(self.__M, x) * ncr(self.__N - self.__M, self.__n - x) / ncr(self.__N, self.__n)
+        return (
+            ncr(self.__M, x)
+            * ncr(self.__N - self.__M, self.__n - x)
+            / ncr(self.__N, self.__n)
+        )
 
     def cdf(self, x):
         """

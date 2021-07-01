@@ -17,6 +17,13 @@ class Binomial:
         self.__mean = n * p
         self.__var = n * p * (1 - p)
 
+    def __str__(self):
+        n = round(self.__n, 2)
+        p = round(self.__p, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Binomial(n={n}, p={p}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

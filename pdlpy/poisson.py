@@ -15,6 +15,12 @@ class Poisson:
         self.__mean = rate
         self.__var = rate
 
+    def __str__(self):
+        rate = round(self.__rate, 2)
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Poisson(rate={rate}, mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean

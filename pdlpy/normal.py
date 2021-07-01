@@ -15,6 +15,11 @@ class Normal:
         self.__mean = mean
         self.__var = var
 
+    def __str__(self):
+        mean = round(self.__mean, 2)
+        var = round(self.__var, 2)
+        return f"Normal(mean={mean}, var={var})"
+
     @property
     def mean(self):
         return self.__mean
