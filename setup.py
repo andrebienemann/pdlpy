@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="pdlpy",
-    version="0.1.1",
+    version="0.2.0",
     author="André Bienemann",
     author_email="andre.bienemann@gmail.com",
     description="Probability Distribution Library for Python",
