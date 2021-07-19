@@ -1,6 +1,5 @@
-import math
-
 from pdlpy.distribution import Distribution
+from pdlpy.math import e
 
 
 class Exponential(Distribution):
@@ -33,7 +32,7 @@ class Exponential(Distribution):
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return self._rate * math.e ** (-self._rate * x)
+        return self._rate * e ** (-self._rate * x)
 
     def cdf(self, x: float) -> float:
         """
@@ -45,4 +44,4 @@ class Exponential(Distribution):
         Returns
         the probability that X will take a value less than or equal to x
         """
-        return 1 - math.e ** (-self._rate * x)
+        return 1 - e ** (-self._rate * x)

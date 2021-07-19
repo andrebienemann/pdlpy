@@ -1,5 +1,5 @@
-from pdlpy.combinatorics import ncr
 from pdlpy.distribution import Distribution
+from pdlpy.math import ncr
 
 
 class Binomial(Distribution):

@@ -1,6 +1,5 @@
-import math
-
 from pdlpy.distribution import Distribution
+from pdlpy.math import e, erf, pi, sqrt
 
 
 class Normal(Distribution):
@@ -32,7 +31,7 @@ class Normal(Distribution):
         Returns
         the relative likelihood that a value of X would lie in sample space
         """
-        return (1 / math.sqrt(2 * math.pi * self._var)) * math.e ** (
+        return (1 / sqrt(2 * pi * self._var)) * e ** (
             -((x - self._mean) ** 2 / 2 * self._var)
         )
 
@@ -46,4 +45,4 @@ class Normal(Distribution):
         Returns
         the probability that X will take a value less than or equal to x
         """
-        return (1 + math.erf((x - self._mean) / (math.sqrt(self._var * 2)))) / 2
+        return (1 + erf((x - self._mean) / (sqrt(self._var * 2)))) / 2

@@ -1,6 +1,5 @@
-import math
-
 from pdlpy.distribution import Distribution
+from pdlpy.math import e, factorial
 
 
 class Poisson(Distribution):
@@ -33,7 +32,7 @@ class Poisson(Distribution):
         Returns
         the probability that X will take a value exactly equal to x
         """
-        return (self._rate ** x) * (math.e ** (-self._rate)) / math.factorial(x)
+        return (self._rate ** x) * (e ** (-self._rate)) / factorial(x)
 
     def cdf(self, x: int) -> float:
         """
