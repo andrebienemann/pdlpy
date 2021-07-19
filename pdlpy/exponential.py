@@ -8,7 +8,7 @@ class Exponential(Distribution):
     Continuous probability distribution of time between events in a Poisson process
     """
 
-    def __init__(self, rate):
+    def __init__(self, rate: float):
         """
         Paramters
         rate: the average number of events
@@ -23,7 +23,7 @@ class Exponential(Distribution):
         var = round(self._var, 2)
         return f"Exponential(rate={rate}, mean={mean}, var={var})"
 
-    def pdf(self, x):
+    def pdf(self, x: float) -> float:
         """
         Probability Density Function
 
@@ -35,7 +35,7 @@ class Exponential(Distribution):
         """
         return self._rate * math.e ** (-self._rate * x)
 
-    def cdf(self, x):
+    def cdf(self, x: float) -> float:
         """
         Cumulative Distribution Function
 

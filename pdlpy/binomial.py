@@ -7,7 +7,7 @@ class Binomial(Distribution):
     Discrete probability distribution of a number of successes in a sequence of independent experiments
     """
 
-    def __init__(self, n, p):
+    def __init__(self, n: int, p: float):
         """
         Parameters
         n: the size of the sequence
@@ -25,7 +25,7 @@ class Binomial(Distribution):
         var = round(self._var, 2)
         return f"Binomial(n={n}, p={p}, mean={mean}, var={var})"
 
-    def pmf(self, x):
+    def pmf(self, x: int) -> float:
         """
         Probability Mass Function
 
@@ -37,7 +37,7 @@ class Binomial(Distribution):
         """
         return ncr(self._n, x) * self._p ** x * (1 - self._p) ** (self._n - x)
 
-    def cdf(self, x):
+    def cdf(self, x: int) -> float:
         """
         Cumulative Distribution Function
 

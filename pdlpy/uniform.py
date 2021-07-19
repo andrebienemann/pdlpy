@@ -6,7 +6,7 @@ class Uniform(Distribution):
     Continuous distribution of a random variable X in interval [a; b] where any value of X has an equal probability
     """
 
-    def __init__(self, a, b):
+    def __init__(self, a: float, b: float):
         """
         Paramters
         a: the minimum value of X
@@ -24,7 +24,7 @@ class Uniform(Distribution):
         var = round(self._var, 2)
         return f"Uniform(a={a}, b={b}, mean={mean}, var={var})"
 
-    def pdf(self, x=None):
+    def pdf(self, x: float) -> float:
         """
         Probability Density Function
 
@@ -36,7 +36,7 @@ class Uniform(Distribution):
         """
         return 1 / (self._b - self._a)
 
-    def cdf(self, x):
+    def cdf(self, x: float) -> float:
         """
         Cumulative Distribution Function
 

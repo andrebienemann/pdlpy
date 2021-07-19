@@ -7,7 +7,7 @@ class Hypergeometric(Distribution):
     Discrete probability distribution that describes the probability of successes in draws from a finite test set
     """
 
-    def __init__(self, n, N, M):
+    def __init__(self, n: int, N: int, M: int):
         """
         Parameters
         n: the number of draws
@@ -28,7 +28,7 @@ class Hypergeometric(Distribution):
         var = round(self._var, 2)
         return f"Hypergeometric(n={n}, N={N}, M={M}, mean={mean}, var={var})"
 
-    def pmf(self, x):
+    def pmf(self, x: int) -> float:
         """
         Probability Mass Function
 
@@ -44,7 +44,7 @@ class Hypergeometric(Distribution):
             / ncr(self._N, self._n)
         )
 
-    def cdf(self, x):
+    def cdf(self, x: int) -> float:
         """
         Cumulative Distribution Function
 

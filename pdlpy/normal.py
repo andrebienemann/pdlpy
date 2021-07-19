@@ -8,7 +8,7 @@ class Normal(Distribution):
     Continuous probability distribution of the random variable X that is assumed to be additively produced by many small effects
     """
 
-    def __init__(self, mean, var):
+    def __init__(self, mean: float, var: float):
         """
         Paramters
         mean: the expectation of the distribution
@@ -22,7 +22,7 @@ class Normal(Distribution):
         var = round(self._var, 2)
         return f"Normal(mean={mean}, var={var})"
 
-    def pdf(self, x):
+    def pdf(self, x: float) -> float:
         """
         Probability Density Function
 
@@ -36,7 +36,7 @@ class Normal(Distribution):
             -((x - self._mean) ** 2 / 2 * self._var)
         )
 
-    def cdf(self, x):
+    def cdf(self, x: float) -> float:
         """
         Cumulative Distribution Function
 

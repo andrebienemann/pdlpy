@@ -6,7 +6,7 @@ class Bernoulli(Distribution):
     Discrete probability distribution of a random variable X which takes either value 1 or 0
     """
 
-    def __init__(self, p):
+    def __init__(self, p: float):
         """
         Parameters
         p: the probability of positive outcome of an experiment
@@ -21,7 +21,7 @@ class Bernoulli(Distribution):
         var = round(self._var, 2)
         return f"Bernoulli(p={p}, mean={mean}, var={var})"
 
-    def pmf(self, x):
+    def pmf(self, x: int) -> float:
         """
         Probability Mass Function
 
@@ -36,7 +36,7 @@ class Bernoulli(Distribution):
         else:
             return self._p
 
-    def cdf(self, x):
+    def cdf(self, x: int) -> float:
         """
         Cumulative Distribution Function
 

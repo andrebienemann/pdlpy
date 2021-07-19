@@ -8,7 +8,7 @@ class Poisson(Distribution):
     Discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space
     """
 
-    def __init__(self, rate):
+    def __init__(self, rate: float):
         """
         Parameters
         rate: the average number of events
@@ -23,7 +23,7 @@ class Poisson(Distribution):
         var = round(self._var, 2)
         return f"Poisson(rate={rate}, mean={mean}, var={var})"
 
-    def pmf(self, x):
+    def pmf(self, x: int) -> float:
         """
         Probability Mass Function
 
@@ -35,7 +35,7 @@ class Poisson(Distribution):
         """
         return (self._rate ** x) * (math.e ** (-self._rate)) / math.factorial(x)
 
-    def cdf(self, x):
+    def cdf(self, x: int) -> float:
         """
         Cumulative Distribution Function
 

@@ -6,7 +6,7 @@ class Geometric(Distribution):
     Discrete probability distributions of the random number X of Bernoulli trials needed to get a single success
     """
 
-    def __init__(self, p):
+    def __init__(self, p: float):
         """
         Parameters
         p: the probability of the positive outcome of the experiment
@@ -21,7 +21,7 @@ class Geometric(Distribution):
         var = round(self._var, 2)
         return f"Geometric(p={p}, mean={mean}, var={var})"
 
-    def pmf(self, x):
+    def pmf(self, x: int) -> float:
         """
         Probability Mass Function
 
@@ -33,7 +33,7 @@ class Geometric(Distribution):
         """
         return (1 - self._p) ** x * self._p
 
-    def cdf(self, x):
+    def cdf(self, x: int) -> float:
         """
         Cumulative Distribution Function
 
