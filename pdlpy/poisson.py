@@ -17,10 +17,13 @@ class Poisson(Distribution):
         self._var = rate
 
     def __str__(self):
-        rate = round(self._rate, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Poisson(rate={rate}, mean={mean}, var={var})"
+        return (
+            "Poisson("
+            f"rate={self._rate:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pmf(self, x: int) -> float:
         """

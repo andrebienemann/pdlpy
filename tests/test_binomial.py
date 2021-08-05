@@ -8,7 +8,10 @@ class TestBinomial(TestCase):
         self.binomial = Binomial(1, 0.0)
 
     def test_str(self):
-        self.assertEqual("Binomial(n=1, p=0.0, mean=0.0, var=0.0)", str(self.binomial))
+        self.assertEqual(
+            "Binomial(n=1, p=0.00, mean=0.00, var=0.00)",
+            str(self.binomial),
+        )
 
     def test_mean(self):
         self.assertEqual(0.0, self.binomial.mean)

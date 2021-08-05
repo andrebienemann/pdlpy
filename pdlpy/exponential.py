@@ -17,10 +17,13 @@ class Exponential(Distribution):
         self._var = rate ** -2
 
     def __str__(self):
-        rate = round(self._rate, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Exponential(rate={rate}, mean={mean}, var={var})"
+        return (
+            "Exponential("
+            f"rate={self._rate:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pdf(self, x: float) -> float:
         """

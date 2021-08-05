@@ -16,10 +16,13 @@ class Bernoulli(Distribution):
         self._var = p * (1 - p)
 
     def __str__(self):
-        p = round(self._p, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Bernoulli(p={p}, mean={mean}, var={var})"
+        return (
+            "Bernoulli("
+            f"p={self._p:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pmf(self, x: int) -> float:
         """

@@ -17,9 +17,12 @@ class Normal(Distribution):
         self._var = var
 
     def __str__(self):
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Normal(mean={mean}, var={var})"
+        return (
+            "Normal(" 
+            f"mean={self._mean:.2f}, " 
+            f"var={self._var:.2f}" 
+            ")"
+        )
 
     def pdf(self, x: float) -> float:
         """

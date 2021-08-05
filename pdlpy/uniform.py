@@ -18,11 +18,14 @@ class Uniform(Distribution):
         self._var = (b - a) ** 2 / 12
 
     def __str__(self):
-        a = round(self._a, 2)
-        b = round(self._b, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Uniform(a={a}, b={b}, mean={mean}, var={var})"
+        return (
+            "Uniform("
+            f"a={self._a:.2f}, "
+            f"b={self._b:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pdf(self, x: float) -> float:
         """

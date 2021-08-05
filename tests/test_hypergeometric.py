@@ -9,7 +9,7 @@ class TestHypergeometric(TestCase):
 
     def test_str(self):
         self.assertEqual(
-            "Hypergeometric(n=1, N=2, M=1, mean=0.5, var=0.25)",
+            "Hypergeometric(n=1, N=2, M=1, mean=0.50, var=0.25)",
             str(self.hypergeometric),
         )
 

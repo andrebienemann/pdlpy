@@ -8,7 +8,10 @@ class TestGeometric(TestCase):
         self.geometric = Geometric(1.0)
 
     def test_str(self):
-        self.assertEqual("Geometric(p=1.0, mean=1.0, var=0.0)", str(self.geometric))
+        self.assertEqual(
+            "Geometric(p=1.00, mean=1.00, var=0.00)",
+            str(self.geometric),
+        )
 
     def test_mean(self):
         self.assertEqual(1.0, self.geometric.mean)

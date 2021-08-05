@@ -8,7 +8,10 @@ class TestNormal(TestCase):
         self.normal = Normal(0.0, 1.0)
 
     def test_str(self):
-        self.assertEqual("Normal(mean=0.0, var=1.0)", str(self.normal))
+        self.assertEqual(
+            "Normal(mean=0.00, var=1.00)",
+            str(self.normal),
+        )
 
     def test_mean(self):
         self.assertEqual(0.0, self.normal.mean)

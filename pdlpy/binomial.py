@@ -19,11 +19,14 @@ class Binomial(Distribution):
         self._var = n * p * (1 - p)
 
     def __str__(self):
-        n = round(self._n, 2)
-        p = round(self._p, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Binomial(n={n}, p={p}, mean={mean}, var={var})"
+        return (
+            "Binomial("
+            f"n={self._n}, "
+            f"p={self._p:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pmf(self, x: int) -> float:
         """

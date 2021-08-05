@@ -16,10 +16,13 @@ class Geometric(Distribution):
         self._var = (1 - p) / (p ** 2)
 
     def __str__(self):
-        p = round(self._p, 2)
-        mean = round(self._mean, 2)
-        var = round(self._var, 2)
-        return f"Geometric(p={p}, mean={mean}, var={var})"
+        return (
+            "Geometric("
+            f"p={self._p:.2f}, "
+            f"mean={self._mean:.2f}, "
+            f"var={self._var:.2f}"
+            ")"
+        )
 
     def pmf(self, x: int) -> float:
         """

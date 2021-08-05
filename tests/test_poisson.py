@@ -8,7 +8,10 @@ class TestPoisson(TestCase):
         self.poisson = Poisson(0.0)
 
     def test_str(self):
-        self.assertEqual("Poisson(rate=0.0, mean=0.0, var=0.0)", str(self.poisson))
+        self.assertEqual(
+            "Poisson(rate=0.00, mean=0.00, var=0.00)",
+            str(self.poisson),
+        )
 
     def test_mean(self):
         self.assertEqual(0.0, self.poisson.mean)

@@ -9,7 +9,8 @@ class TestExponential(TestCase):
 
     def test_str(self):
         self.assertEqual(
-            "Exponential(rate=1.0, mean=1.0, var=1.0)", str(self.exponential)
+            "Exponential(rate=1.00, mean=1.00, var=1.00)",
+            str(self.exponential),
         )
 
     def test_mean(self):
