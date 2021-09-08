@@ -1,4 +1,4 @@
-from math import e, erf, factorial, floor, pi, sqrt, log
+from math import ceil, e, erf, factorial, floor, log, pi, sqrt
 
 
 def ncr(n: int, r: int) -> int:
